@@ -34,9 +34,11 @@
     <div class="col-md-6" ng-controller="ToBuyController as toBuy">
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in toBuy.list">Buy {{ item.quantity }} {{ item.itemName}} <button class="btn btn-default" ng-click="toBuy.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in toBuy.list">Buy {{ item.quantity }} {{ item.itemName}}
+         <button class="btn btn-default" ng-click="toBuy.buyItem($index)">
+           <span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
-     <div ng-if="toBuy.empty()" class="emptyMessage">Everything is bought!</div>
+     <div ng-if="toBuy.isEmpty()" class="emptyMessage">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
@@ -45,7 +47,7 @@
      <ul>
        <li ng-repeat="item in alrBought.list">Bought {{ item.quantity }} {{ item.itemName}}</li>
      </ul>
-     <div ng-if="alrBought.empty()" class="emptyMessage">Nothing bought yet.</div>
+     <div ng-if="alrBought.isEmpty()" class="emptyMessage">Nothing bought yet.</div>
     </div>
   </div>
 </div>
